@@ -1,0 +1,46 @@
+header {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 30px;
+}
+
+.header-welcome {
+  display: flex;
+  align-items: center;
+}
+
+header p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+header button {
+  padding: 10px 15px;
+  background-color: orangered;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+header button:hover {
+  background-color: red;
+}
+
+body {
+  padding-top: 20px;
+}

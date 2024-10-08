@@ -1,0 +1,28 @@
+.movie-results {
+  padding: 20px;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.slider-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.slider-button:hover:not(:disabled) {
+  color: red;
+}

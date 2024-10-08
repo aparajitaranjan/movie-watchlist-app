@@ -1,0 +1,69 @@
+.movie-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #333;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.movie-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-title {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.movie-year {
+  margin: 0 0 10px;
+  color: orange;
+}
+
+.watchlist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+.bookmark-icon {
+  font-size: 35px;
+  color: red;
+}
+
+.inner-icon {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 18%;
+  left: 25%;
+  color: #fff;
+}
+
+.watchlist-icon:hover {
+  opacity: 0.8;
+}
