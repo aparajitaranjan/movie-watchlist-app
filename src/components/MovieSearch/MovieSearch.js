@@ -17,10 +17,11 @@ const MovieSearch = () => {
   const dispatch = useDispatch();
   const watchlist = useSelector((state) => state.watchlist.movies || []);
   const email = useSelector((state) => state.user.email);
-
+  console.log('watchlist---------', watchlist);
   const handleSearch = async () => {
     setHasSearched(true);
     setLoading(true);
+    console.log('searchTerm----', searchTerm);
     if (searchTerm) {
       const results = await fetchMovies(searchTerm);
       setMovies(results || []);
