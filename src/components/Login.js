@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/actions/userActions';
-import { setWatchlist } from '../redux/actions/watchlistActions';
 import '../styles/Login.css';
 
 const Login = () => {

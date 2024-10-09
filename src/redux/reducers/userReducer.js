@@ -1,4 +1,3 @@
-// src/redux/reducers/userReducer.js
 import { SET_USER, LOG_OUT } from '../actions/actionTypes';
 
 const initialState = {

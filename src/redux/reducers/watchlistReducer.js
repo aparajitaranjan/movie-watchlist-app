@@ -1,12 +1,18 @@
 import {
   ADD_TO_WATCHLIST,
   REMOVE_FROM_WATCHLIST,
-  SET_WATCHLIST_NAME,
+  SET_USER,
+  LOG_OUT,
 } from '../actions/actionTypes';
 
 const initialState = {
-  movies: JSON.parse(localStorage.getItem('watchlist')) || [],
-  watchlistName: localStorage.getItem('watchlistName') || 'My Watchlist', // Default name
+  movies: [],
+  watchlistName: localStorage.getItem('watchlistName') || 'My Watchlist',
+};
+
+const loadWatchlist = (email) => {
+  const userWatchlistKey = `watchlist_${email}`;
+  return JSON.parse(localStorage.getItem(userWatchlistKey)) || [];
 };
 
 const watchlistReducer = (state = initialState, action) => {
@@ -20,11 +26,12 @@ const watchlistReducer = (state = initialState, action) => {
           (movie) => movie.imdbID !== action.payload.imdbID
         ),
       };
-    case SET_WATCHLIST_NAME:
-      return { ...state, watchlistName: action.payload };
+    case SET_USER:
+      return { ...state, movies: loadWatchlist(action.payload) };
+    case LOG_OUT:
+      return { ...state, movies: [] };
     default:
       return state;
   }
 };
-
 export default watchlistReducer;
