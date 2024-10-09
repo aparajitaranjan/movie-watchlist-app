@@ -1,3 +1,3 @@
 ## Contributors
 
-- [Your Name](https://github.com/aparajitaranjan/movie-watchlist-app)
+- [Aparajita Ranjan: Movie Watchlist](https://github.com/aparajitaranjan/movie-watchlist-app)
