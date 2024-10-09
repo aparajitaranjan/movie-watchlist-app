@@ -1,5 +1,6 @@
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px;
+.movie-card-wrapper {
+  margin: 0 10px;
+}
+.movie-carousel {
+  padding: 20px 0 30px;
 }

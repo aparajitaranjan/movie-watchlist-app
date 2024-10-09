@@ -1,61 +1,103 @@
 .movie-detail-container {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url('../assets/bgimage.jpg') no-repeat center center / cover;
+  min-height: 100vh;
   color: white;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 20px;
 }
 
 .back-button {
-  background-color: #333;
-  color: white;
+  background: rgba(255, 255, 255, 0.3);
   border: none;
-  padding: 10px;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  transition: background 0.3s;
 }
 
 .back-button:hover {
-  background-color: #555;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .movie-detail {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-color: #222;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .movie-detail-poster {
   width: 300px;
   height: 450px;
   object-fit: cover;
-  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .movie-detail-info {
+  padding: 20px;
   flex: 1;
 }
 
 .movie-detail-info h2 {
-  margin: 0;
-  font-size: 24px;
+  color: orangered;
+  font-size: 28px;
+  margin: 0 0 10px;
 }
 
 .movie-detail-info p {
-  margin: 10px 0;
-  line-height: 1.6;
+  margin: 5px 0;
+  font-size: 16px;
 }
-
+.movie-rating span {
+  color: white;
+  font-size: 18px;
+}
 .movie-detail-loading,
 .movie-detail-error,
 .movie-detail-no-data {
-  color: #fff;
+  color: white;
+  font-size: 24px;
   text-align: center;
   margin-top: 50px;
-  font-size: 20px;
+}
+.movie-detail-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.skeleton-poster {
+  width: 300px;
+  height: 450px;
+  background-color: #e0e0e0;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton-text {
+  width: 80%;
+  height: 20px;
+  background-color: #e0e0e0;
+  margin: 10px 0;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #c0c0c0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
 }

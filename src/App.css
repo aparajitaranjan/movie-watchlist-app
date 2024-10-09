@@ -53,10 +53,10 @@
 }
 
 .main-content {
+  padding: 0 20px;
   background-color: #fff;
   color: orangered;
   width: 85%;
-  padding: 20px;
   overflow-y: auto;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px 0 0 10px;
@@ -78,7 +78,7 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s;
   width: fit-content;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -90,7 +90,6 @@
 
 .home-button:hover {
   background-color: #ff6347;
-  transform: translateY(-2px);
 }
 
 input[type='email'] {

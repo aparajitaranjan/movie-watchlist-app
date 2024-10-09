@@ -7,7 +7,6 @@ import {
 
 const initialState = {
   movies: [],
-  watchlistName: localStorage.getItem('watchlistName') || 'My Watchlist',
 };
 
 const loadWatchlist = (email) => {

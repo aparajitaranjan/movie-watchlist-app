@@ -8,14 +8,14 @@ const SliderControls = ({ onPrev, onNext, prevDisabled, nextDisabled }) => {
         disabled={prevDisabled}
         className="slider-button prev"
       >
-        &lt; {/* This represents the '<' icon */}
+        &lt;
       </button>
       <button
         onClick={onNext}
         disabled={nextDisabled}
         className="slider-button next"
       >
-        &gt; {/* This represents the '>' icon */}
+        &gt;
       </button>
     </div>
   );

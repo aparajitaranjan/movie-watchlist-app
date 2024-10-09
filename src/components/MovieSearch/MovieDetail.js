@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/omdbApi';
 import '../../styles/MovieDetail.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getMovieDetails = async () => {
       try {
+        setLoading(true);
         const data = await fetchMovieDetails(id);
         setMovie(data);
         setLoading(false);
@@ -26,7 +28,13 @@ const MovieDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <div className="movie-detail-loading">Loading...</div>;
+    return (
+      <div className="movie-detail-loading">
+        <div className="skeleton-poster"></div>
+        <div className="skeleton-text"></div>
+        <div className="skeleton-text"></div>
+      </div>
+    );
   }
 
   if (error) {
@@ -39,9 +47,6 @@ const MovieDetail = () => {
 
   return (
     <div className="movie-detail-container">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        &larr; Back
-      </button>
       <div className="movie-detail">
         <img
           src={
@@ -66,9 +71,15 @@ const MovieDetail = () => {
           <p>
             <strong>Plot:</strong> {movie.Plot}
           </p>
-          <p>
+          <div className="movie-rating">
+            {' '}
+            IMDB Rating:
+            <span> {movie.imdbRating}</span>
+            <FontAwesomeIcon icon={faStar} className="star" />
+          </div>
+          {/* <p>
             <strong>IMDB Rating:</strong> {movie.imdbRating}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
