@@ -20,8 +20,7 @@ const App = () => {
         {email ? (
           <div className="layout">
             <aside className="sidebar">
-              {/* <h2>WatchList</h2> */}
-              <Link to="/home" className="home-button">
+              <Link to="/" className="home-button">
                 <i className="fas fa-home"></i> Home
               </Link>
               <Link to="/watchlist" className="home-button">
@@ -30,7 +29,7 @@ const App = () => {
             </aside>
             <main className="main-content">
               <Routes>
-                <Route path="/home" element={<MovieSearch />} />
+                <Route path="/" element={<MovieSearch />} />
                 <Route path="/watchlist" element={<MyWatchlist />} />
                 <Route path="/movie/:id" element={<MovieDetail />} />
               </Routes>
